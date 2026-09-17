@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description: "갓 담은 신선함 · 냉장 생 피클 · 오직 국산 재료",
     type: "website",
   },
+  other: {
+    "naver-site-verification": "cd15aca3a3b0e621f7d5aaf2899fcc197bc61523",
+  },
 };
 
 export default function RootLayout({

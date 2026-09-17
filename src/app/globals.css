@@ -1,0 +1,198 @@
+/* =========================================
+   TONITO PICKLE — Global Styles
+   Pure CSS (no Tailwind dependency)
+========================================= */
+
+/* =========================================
+   DESIGN TOKENS
+========================================= */
+:root {
+  --primary:         #006b32;
+  --primary-dark:    #004d22;
+  --primary-light:   #008741;
+  --secondary:       #b61821;
+  --secondary-dark:  #8a0f17;
+  --tertiary:        #8a7a00;
+  --tertiary-bright: #d4be00;
+  --bg:              #fcf9f4;
+  --bg-low:          #f0ede9;
+  --brine-black:     #121212;
+
+  --shadow-sm:  3px 3px 0px #121212;
+  --shadow-md:  4px 4px 0px #121212;
+  --shadow-lg:  6px 6px 0px #121212;
+  --shadow-xl:  8px 8px 0px #121212;
+  --shadow-white-md: 4px 4px 0px rgba(255,255,255,0.4);
+  --shadow-white-lg: 6px 6px 0px rgba(255,255,255,0.5);
+}
+
+/* =========================================
+   RESET
+========================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--bg);
+  color: var(--brine-black);
+  font-family: 'Noto Sans KR', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img, video { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font: inherit; }
+
+/* =========================================
+   RESPONSIVE UTILITIES
+   (replacing Tailwind breakpoint classes)
+========================================= */
+
+/* Nav */
+.nav-links-desktop { display: none; }
+.nav-hamburger-btn { display: flex; }
+
+@media (min-width: 768px) {
+  .nav-links-desktop { display: flex; align-items: center; gap: 2rem; }
+  .nav-hamburger-btn { display: none; }
+}
+
+/* Grid responsive */
+.grid-1 { display: grid; grid-template-columns: 1fr; }
+
+@media (min-width: 768px) {
+  .md-grid-2 { grid-template-columns: 1fr 1fr !important; gap: 4rem !important; }
+}
+
+@media (min-width: 640px) {
+  .sm-grid-4 { grid-template-columns: repeat(4, 1fr) !important; }
+  .sm-block   { display: block !important; }
+  .sm-grid-3  { grid-template-columns: repeat(3, 1fr) !important; }
+}
+
+/* =========================================
+   DESKTOP RESPONSIVE — section padding
+========================================= */
+@media (min-width: 768px) {
+  /* Hero 제외한 섹션 — 데스크탑에서 좌우 여백 확장 */
+  section:not(#home) {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+}
+@media (min-width: 1280px) {
+  section:not(#home) {
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
+  }
+}
+
+/* Hide/show */
+.hidden     { display: none; }
+.sm-hidden  { display: block; }
+@media (min-width: 640px) { .sm-hidden { display: none; } }
+
+/* Flex utilities */
+.flex    { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+
+/* =========================================
+   TICKER ANIMATION
+========================================= */
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-animate {
+  animation: ticker-scroll 22s linear infinite;
+  will-change: transform;
+  display: flex;
+  white-space: nowrap;
+}
+
+/* =========================================
+   HERO ENTRANCE
+========================================= */
+@keyframes fade-up {
+  0%   { opacity: 0; transform: translateY(32px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.hero-enter { opacity: 0; animation: fade-up 0.7s ease forwards; }
+.hero-d1 { animation-delay: 0.05s; }
+.hero-d2 { animation-delay: 0.2s; }
+.hero-d3 { animation-delay: 0.35s; }
+.hero-d4 { animation-delay: 0.5s; }
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+
+/* =========================================
+   BUTTONS
+========================================= */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  font-family: 'Space Mono', monospace; font-weight: 700; font-size: 12px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 13px 24px; border-radius: 999px; border: 3px solid var(--brine-black);
+  cursor: pointer; white-space: nowrap; line-height: 1;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.btn:hover  { transform: translate(-2px, -2px); }
+.btn:active { transform: translate(0, 0) !important; }
+
+.btn-white  { background: #fff; color: var(--brine-black); box-shadow: var(--shadow-md); }
+.btn-white:hover  { box-shadow: var(--shadow-lg); }
+.btn-green  { background: var(--primary); color: #fff; box-shadow: var(--shadow-md); }
+.btn-green:hover  { box-shadow: var(--shadow-lg); }
+.btn-red    { background: var(--secondary); color: #fff; box-shadow: var(--shadow-md); }
+.btn-red:hover    { box-shadow: var(--shadow-lg); }
+.btn-outline{ background: var(--bg); color: var(--brine-black); box-shadow: var(--shadow-md); }
+.btn-outline:hover{ box-shadow: var(--shadow-lg); }
+.btn-ghost  { background: transparent; color: #fff; border-color: rgba(255,255,255,0.45); }
+.btn-ghost:hover  { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+/* =========================================
+   EYEBROW
+========================================= */
+.eyebrow {
+  font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-bottom: 0.6rem;
+}
+
+/* =========================================
+   MISC
+========================================= */
+.stripe-bg {
+  background-image: repeating-linear-gradient(
+    45deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px,
+    transparent 1px, transparent 20px
+  );
+}
+
+.mix-multiply { mix-blend-mode: multiply; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.hard-shadow    { box-shadow: var(--shadow-md); }
+.hard-shadow-lg { box-shadow: var(--shadow-lg); }
+
+.product-card { transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.product-card:hover { transform: translate(-3px, -3px); }
+.why-card { transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.why-card:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-lg); }

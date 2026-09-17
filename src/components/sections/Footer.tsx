@@ -110,9 +110,40 @@ export default function Footer() {
               Contact
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-              {["antonio.kang91@gmail.com", "@tonito_quikle (IG/TikTok)", "납품 문의", "콜라보 제안"].map((c) => (
-                <span key={c} style={{ fontSize: 13, color: "rgba(255,255,255,0.5)" }}>{c}</span>
-              ))}
+              <a
+                href="mailto:antonio.kang91@gmail.com"
+                style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.15s" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
+              >
+                antonio.kang91@gmail.com
+              </a>
+              <a
+                href="https://www.instagram.com/tonito_quikle"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.15s" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
+              >
+                @tonito_quikle (IG/TikTok)
+              </a>
+              <a
+                href="mailto:antonio.kang91@gmail.com?subject=납품 문의"
+                style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.15s" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
+              >
+                납품 문의
+              </a>
+              <a
+                href="mailto:antonio.kang91@gmail.com?subject=콜라보 제안"
+                style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.15s" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
+              >
+                콜라보 제안
+              </a>
             </div>
           </div>
         </div>

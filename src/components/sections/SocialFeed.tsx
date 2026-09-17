@@ -92,6 +92,7 @@ export default function SocialFeed() {
                   e.currentTarget.style.opacity = "0.85";
                   e.currentTarget.style.transform = "scale(1)";
                 }}
+                loading="lazy"
               />
             </div>
           ))}

@@ -28,10 +28,13 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
-          rel="stylesheet"
-        />
+        {/* English display font */}
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton:wght@400&display=swap" />
+        {/* English body fonts */}
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" />
+        {/* Korean fonts */}
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" />
+        <link href="https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Hanken+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
       <body>{children}</body>
     </html>

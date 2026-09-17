@@ -49,8 +49,10 @@ export default function Story() {
         fill
         style={{ objectFit: "cover", opacity: 0.08, mixBlendMode: "screen" }}
         aria-hidden="true"
-      />
-      <div className="stripe-bg" style={{ position: "absolute", inset: 0, pointerEvents: "none" }} />
+      loading="lazy"
+                />
+      <div className="stripe-bg" style={{ position: "absolute", inset: 0, pointerEvents: "none" }} loading="lazy"
+                />
 
       <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
         {/* Intro Section */}
@@ -82,9 +84,11 @@ export default function Story() {
             }}
           >
             한국의 피클이 너무 아쉬웠어요.
-            <br />
+            <br loading="lazy"
+                />
             그래서 멕시코에서 배운 맛을 그대로 들고 왔습니다.
-            <br />
+            <br loading="lazy"
+                />
             <span style={{ color: "var(--tertiary-bright)", fontWeight: 700 }}>이제 피클이 주인공인 이야기를 시작합니다.</span>
           </p>
         </div>
@@ -108,7 +112,8 @@ export default function Story() {
                 objectFit: "cover",
                 animation: "slideInFromRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards"
               }}
-            />
+            loading="lazy"
+                />
             {/* Overlay */}
             <div
               style={{
@@ -117,7 +122,8 @@ export default function Story() {
                 background: "linear-gradient(135deg, rgba(0,107,50,0.4) 0%, rgba(0,107,50,0.1) 100%)",
                 pointerEvents: "none"
               }}
-            />
+            loading="lazy"
+                />
           </div>
         </div>
 

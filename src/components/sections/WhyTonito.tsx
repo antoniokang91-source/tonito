@@ -42,7 +42,8 @@ export default function WhyTonito() {
     >
       {/* Tony decoration */}
       <div style={{ position: "absolute", top: "1.5rem", right: "1rem", width: 100, height: 100, zIndex: 1, opacity: 0.9, pointerEvents: "none" }}>
-        <Image src="/images/characters/tony_holding_jar.png" alt="" fill style={{ objectFit: "contain" }} />
+        <Image src="/images/characters/tony_holding_jar.png" alt="" fill style={{ objectFit: "contain" }} loading="lazy"
+                />
       </div>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <span className="eyebrow" style={{ color: "var(--primary)" }}>Why Tonito</span>

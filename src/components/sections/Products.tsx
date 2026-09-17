@@ -88,7 +88,8 @@ export default function Products() {
     >
       {/* Tony decoration */}
       <div style={{ position: "absolute", bottom: "0.5rem", right: "1.5rem", width: 100, height: 100, zIndex: 1, opacity: 0.9, pointerEvents: "none" }}>
-        <Image src="/images/characters/tony_carrying_chips.png" alt="" fill style={{ objectFit: "contain" }} />
+        <Image src="/images/characters/tony_carrying_chips.png" alt="" fill style={{ objectFit: "contain" }} loading="lazy"
+                />
       </div>
 
       {/* Header */}
@@ -134,7 +135,8 @@ export default function Products() {
               }}
             >
               {/* Top color bar */}
-              <div style={{ height: 10, background: p.topColor }} />
+              <div style={{ height: 10, background: p.topColor }} loading="lazy"
+                />
 
               {/* Image area */}
               <div
@@ -162,6 +164,7 @@ export default function Products() {
                     transition: "transform 0.2s",
                     ...(p.imgStyle || {}),
                   }}
+                loading="lazy"
                 />
                 {/* Emblem badge */}
                 <div
@@ -184,7 +187,8 @@ export default function Products() {
                     width={54}
                     height={54}
                     style={{ objectFit: "cover", width: "100%", height: "100%" }}
-                  />
+                  loading="lazy"
+                />
                 </div>
               </div>
 

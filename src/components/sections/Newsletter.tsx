@@ -38,12 +38,14 @@ export default function Newsletter() {
           height={450}
           style={{ width: "100%", height: "auto", objectFit: "contain", objectPosition: "right bottom", mixBlendMode: "multiply" }}
           aria-hidden="true"
-        />
+        loading="lazy"
+                />
       </div>
 
       {/* Tony decoration */}
       <div style={{ position: "absolute", top: "2rem", right: "2rem", width: 90, height: 90, zIndex: 2, opacity: 0.9, pointerEvents: "none" }}>
-        <Image src="/images/characters/tony_peace_sign.png" alt="" fill style={{ objectFit: "contain" }} />
+        <Image src="/images/characters/tony_peace_sign.png" alt="" fill style={{ objectFit: "contain" }} loading="lazy"
+                />
       </div>
 
       <div style={{ position: "relative", zIndex: 2, maxWidth: 600, margin: "0 auto" }}>
@@ -65,7 +67,8 @@ export default function Newsletter() {
           className="reveal reveal-d1"
           style={{ fontSize: 15, color: "rgba(0,0,0,0.65)", marginBottom: "1.5rem", lineHeight: 1.7 }}
         >
-          매달 이달의 피클 + 새로운 레시피 + 한정 할인까지.<br />
+          매달 이달의 피클 + 새로운 레시피 + 한정 할인까지.<br loading="lazy"
+                />
           멕시코의 오아시스(Pick of the month)를 함께 경험해봐요. 🥒
         </p>
 

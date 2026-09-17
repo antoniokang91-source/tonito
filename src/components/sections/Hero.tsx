@@ -37,7 +37,8 @@ export default function Hero() {
           height={480}
           style={{ width: "100%", height: "auto", objectFit: "contain", objectPosition: "center bottom", mixBlendMode: "multiply" }}
           priority
-        />
+        loading="lazy"
+                />
       </div>
 
       {/* Content */}
@@ -73,8 +74,10 @@ export default function Hero() {
             marginBottom: "0.85rem",
           }}
         >
-          <span style={{ color: "var(--primary)" }}>WE</span><br />
-          PICK<br />
+          <span style={{ color: "var(--primary)" }}>WE</span><br loading="lazy"
+                />
+          PICK<br loading="lazy"
+                />
           <span style={{ color: "var(--primary)" }}>DIFFERENT</span>
         </h1>
 

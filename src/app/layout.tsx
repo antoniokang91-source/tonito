@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "TONITO — WE PICK DIFFERENT",
   description: "새로운 피클의 문화를 쓰다.",
   openGraph: {
-    title: "TTONITO — WE PICK DIFFERENT",
+    title: "TONITO — WE PICK DIFFERENT",
     description: "멕시코 스타일의 아삭한 피클을 만드는 브랜드, TONITO입니다.",
     type: "website",
   },

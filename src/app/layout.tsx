@@ -10,7 +10,10 @@ export const metadata: Metadata = {
     type: "website",
   },
   other: {
-    "naver-site-verification": "cd15aca3a3b0e621f7d5aaf2899fcc197bc61523",
+    "naver-site-verification": [
+      "cd15aca3a3b0e621f7d5aaf2899fcc197bc61523",
+      "0fa772ea3e6027e7611d384824f88a776fde8cdd",
+    ],
   },
 };
 

@@ -3,10 +3,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "TONITO — WE PICK DIFFERENT",
-  description: "멕시코 8년, 한국 재료로 담다. 갓 담은 신선함을 냉장 코너에서 만나요.",
+  description: "새로운 피클의 문화를 쓰다.",
   openGraph: {
-    title: "TONITO Pickle — PICK DIFFERENT",
-    description: "갓 담은 신선함 · 냉장 생 피클 · 오직 국산 재료",
+    title: "TTONITO — WE PICK DIFFERENT",
+    description: "멕시코 스타일의 아삭한 피클을 만드는 브랜드, TONITO입니다.",
     type: "website",
   },
   other: {

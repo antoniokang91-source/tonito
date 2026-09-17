@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "TONITO Pickle — PICK DIFFERENT",
+  title: "TONITO — WE PICK DIFFERENT",
   description: "멕시코 8년, 한국 재료로 담다. 갓 담은 신선함을 냉장 코너에서 만나요.",
   openGraph: {
     title: "TONITO Pickle — PICK DIFFERENT",

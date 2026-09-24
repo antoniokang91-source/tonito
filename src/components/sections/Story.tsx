@@ -19,8 +19,8 @@ const PHOTOS = [
 
 const BEATS = [
   { num: "01", title: "이상했어요, 한국의 피클", line: "짱아찌도 절임도, 주인공은 아니었죠." },
-  { num: "02", title: "멕시코에서 답을 찾았어요", line: "센트로 아바스토 시장, 한 할머니의 손맛." },
-  { num: "03", title: "그 맛 그대로, 한국 재료로", line: "냉장 생피클, 타협은 없습니다." },
+  { num: "02", title: "멕시코에서 답을 찾았어요", line: "Centro Abasto 시장, 한 가게의 특별한 맛." },
+  { num: "03", title: "그 맛 그대로, 한국 재료로", line: "100% 냉장 생피클, 타협은 없습니다." },
 ];
 
 export default function Story() {
@@ -141,7 +141,7 @@ export default function Story() {
               fontStyle: "italic"
             }}
           >
-            "토니또는 단순한 피클 브랜드가 아닙니다. 그 할머니 가게처럼, 피클이 주인공이 되는 경험을 만드는 거니까요."
+            "토니또는 단순한 피클 브랜드가 아닙니다. 그 가게처럼, 피클이 주인공이 되는 경험을 만드는 거니까요."
           </p>
           <p style={{ fontSize: 14, color: "var(--tertiary-bright)", fontWeight: 700, textTransform: "uppercase", margin: 0 }}>
             — Antonio Kang

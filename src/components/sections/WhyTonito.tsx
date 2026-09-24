@@ -6,15 +6,15 @@ const REASONS = [
   {
     icon: "❄️",
     num: "01",
-    title: "냉장\nCold Storage",
-    desc: "열 한 번 안 쓴 냉장 생 보관. 그 크런치, 그대로.",
+    title: "냉장 절임",
+    desc: "끓이지 않은 초물로 48시간 숙성. 그 아삭함, 그대로.",
     accent: true,
   },
   {
     icon: "🌵",
     num: "02",
-    title: "할머니의\n비밀 레시피",
-    desc: "센트로 아바스토 시장, 할머니의 손맛 그대로.",
+    title: "멕시코 로컬 가게의\n비밀 레시피",
+    desc: "다른 음식보다 피클이 주인공이었던, 그 맛 그대로.",
     accent: false,
   },
   {

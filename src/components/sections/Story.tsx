@@ -3,18 +3,18 @@ import Image from "next/image";
 import { useReveal } from "@/lib/useReveal";
 
 const PHOTOS = [
-  { src: "/images/story/mx-02-market-stand.jpg", caption: "센트로 아바스토 시장",   rotate: -3 },
-  { src: "/images/story/mx-11-jar.jpg",           caption: "병 하나에도 진심",      rotate: 2.5 },
-  { src: "/images/story/mx-12-feast.jpg",         caption: "현지 로컬 밥상",        rotate: -2 },
-  { src: "/images/story/mx-13-tile.jpg",          caption: "멕시코의 색",           rotate: 3 },
-  { src: "/images/story/mx-14-shrimp.jpg",        caption: "해변의 새우구이",       rotate: -1.5 },
-  { src: "/images/story/mx-01-taco-table.jpg",    caption: "로컬 식당, 그 첫 끼",   rotate: 2 },
-  { src: "/images/story/mx-15-hotdog.jpg",        caption: "길거리 화로 앞에서",     rotate: -3 },
-  { src: "/images/story/mx-05-farm.jpg",          caption: "국산 재료, 발로 뛰며",  rotate: 1.5 },
-  { src: "/images/story/mx-16-angel.jpg",         caption: "멕시코시티에서",        rotate: -2.5 },
-  { src: "/images/story/mx-03-salsa-night.jpg",   caption: "멕시코의 살사, 그 아삭함", rotate: 3 },
-  { src: "/images/story/mx-06-buffet.jpg",        caption: "오이 하나에도 진심",     rotate: -1.5 },
-  { src: "/images/story/mx-10-horse.jpg",         caption: "현지에서 배운 진짜",     rotate: 2 },
+  { src: "/images/story/mx-02-market-stand.jpg", caption: "센트로 아바스토 시장" },
+  { src: "/images/story/mx-11-jar.jpg",           caption: "병 하나에도 진심" },
+  { src: "/images/story/mx-12-feast.jpg",         caption: "현지 로컬 밥상" },
+  { src: "/images/story/mx-13-tile.jpg",          caption: "멕시코의 색" },
+  { src: "/images/story/mx-14-shrimp.jpg",        caption: "해변의 새우구이" },
+  { src: "/images/story/mx-01-taco-table.jpg",    caption: "로컬 식당, 그 첫 끼" },
+  { src: "/images/story/mx-15-hotdog.jpg",        caption: "길거리 화로 앞에서" },
+  { src: "/images/story/mx-05-farm.jpg",          caption: "국산 재료, 발로 뛰며" },
+  { src: "/images/story/mx-16-angel.jpg",         caption: "멕시코시티에서" },
+  { src: "/images/story/mx-03-salsa-night.jpg",   caption: "멕시코의 살사, 그 아삭함" },
+  { src: "/images/story/mx-06-buffet.jpg",        caption: "오이 하나에도 진심" },
+  { src: "/images/story/mx-10-horse.jpg",         caption: "현지에서 배운 진짜" },
 ];
 
 const BEATS = [
@@ -73,29 +73,23 @@ export default function Story() {
           </p>
         </div>
 
-        {/* Photo scrapbook */}
-        <div
-          className="story-photo-grid"
-          style={{ paddingBottom: "3rem" }}
-        >
-          {PHOTOS.map((p, i) => (
-            <div
-              key={p.src}
-              className={`reveal reveal-d${(i % 4) + 1} story-polaroid`}
-              style={{ transform: `rotate(${p.rotate}deg)` }}
-            >
-              <div className="story-photo-frame">
-                <Image
-                  src={p.src}
-                  alt={p.caption}
-                  fill
-                  sizes="(min-width: 640px) 25vw, 50vw"
-                  style={{ objectFit: "cover" }}
-                />
+        {/* Photo slider */}
+        <div className="reveal no-scrollbar story-photo-scroll" style={{ paddingBottom: "3rem" }}>
+          <div className="story-photo-track">
+            {PHOTOS.map((p) => (
+              <div key={p.src} className="story-polaroid">
+                <div className="story-photo-frame">
+                  <Image
+                    src={p.src}
+                    alt={p.caption}
+                    fill
+                    sizes="(min-width: 768px) 300px, 66vw"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
               </div>
-              <p className="story-polaroid-caption">{p.caption}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Beats — condensed, no long paragraphs */}
@@ -123,6 +117,20 @@ export default function Story() {
             textAlign: "center"
           }}
         >
+          <div
+            style={{
+              position: "relative",
+              width: 72,
+              height: 72,
+              margin: "0 auto 1.25rem",
+              borderRadius: "50%",
+              overflow: "hidden",
+              border: "3px solid var(--brine-black)",
+              boxShadow: "3px 3px 0 var(--brine-black)",
+            }}
+          >
+            <Image src="/images/story/mx-06-buffet.jpg" alt="Antonio Kang" fill sizes="72px" style={{ objectFit: "cover" }} />
+          </div>
           <p
             style={{
               fontSize: 17,
@@ -142,21 +150,28 @@ export default function Story() {
       </div>
 
       <style>{`
-        .story-photo-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 1.5rem 1rem;
+        .story-photo-scroll {
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          margin: 0 -1.25rem;
+          padding-left: 1.25rem;
+          padding-right: 1.25rem;
+        }
+        .story-photo-track {
+          display: flex;
+          gap: 1rem;
+          width: max-content;
         }
         .story-polaroid {
+          flex: 0 0 auto;
+          width: 66vw;
+          max-width: 300px;
+          scroll-snap-align: start;
           background: #fff;
           border: 3px solid var(--brine-black);
           border-radius: 4px;
-          padding: 8px 8px 28px;
+          padding: 8px;
           box-shadow: 4px 4px 0 var(--brine-black);
-          transition: transform 0.15s ease, box-shadow 0.15s ease;
-        }
-        .story-polaroid:hover {
-          box-shadow: 6px 6px 0 var(--brine-black);
         }
         .story-photo-frame {
           position: relative;
@@ -165,15 +180,6 @@ export default function Story() {
           overflow: hidden;
           border-radius: 2px;
           background: var(--bg-low);
-        }
-        .story-polaroid-caption {
-          font-family: var(--font-mono, 'Space Mono', monospace);
-          font-size: 10.5px;
-          letter-spacing: 0.02em;
-          color: var(--brine-black);
-          text-align: center;
-          margin-top: 10px;
-          line-height: 1.3;
         }
 
         .story-beats {
@@ -202,9 +208,6 @@ export default function Story() {
           line-height: 1.5;
         }
 
-        @media (min-width: 640px) {
-          .story-photo-grid { grid-template-columns: repeat(4, 1fr); gap: 2rem 1.5rem; }
-        }
         @media (min-width: 768px) {
           .story-beats { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
         }

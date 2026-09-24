@@ -1,7 +1,7 @@
 export default function Ticker() {
   const items = [
-    "갓 담은 신선함","ELIGE DIFERENTE", "냉장 생 피클", "PICK DIFFERENT","Sabor a México",
-    "오직 국산 재료", "멕시코의 맛", "CRUNCHY. FRESH. BOLD.",
+    "갓 담은 신선함","ELIGE DIFERENTE", "냉장 생 피클", "WE PICK DIFFERENT","Sabor a México",
+    "100% 국산 재료", "멕시코의 맛", "CRUNCHY. FRESH. BOLD.",
     "아삭함이 살아있는", "TONITO PICKLE", "PEPINILLOS TONITO",
   ];
   const doubled = [...items, ...items];

@@ -3,9 +3,8 @@ import Image from "next/image";
 import { useReveal } from "@/lib/useReveal";
 
 const RECIPES = [
-  { img: "/images/recipes/chicken-pickle.jpg",  tag: "EASY · 5MIN",  title: "치킨엔 피클 · 이건 국룰",     product: "HOT SPEAR 사용" },
-  { img: "/images/recipes/donkatsu-pickle.jpg", tag: "EASY · 10MIN", title: "돈까스엔 피클 · 경양식과 환상의 조합",  product: "CLASSIC 사용" },
-  { img: "/images/recipes/nacho-salsa.jpg",     tag: "EASY · 10MIN", title: "나초 × 피클살사 · 홈파티용",   product: "HOT CHIPS 사용" },
+  { img: "/images/story/mx-15-hotdog.jpg",  tag: "EASY · 5MIN",  title: "피클도그",   product: "빵 + 토니또 피클 + 소시지 토핑" },
+  { img: "/images/recipes/nacho-salsa.jpg", tag: "EASY · 10MIN", title: "피클나쵸",   product: "피클딥 + 나쵸" },
 ];
 
 export default function Recipes() {
@@ -124,7 +123,14 @@ export default function Recipes() {
           ))}
         </div>
 
-        <a href="#recipes" className="btn btn-green">더 많은 레시피 보기 →</a>
+        <a
+          href="https://www.instagram.com/tonito_quikle"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-green"
+        >
+          토니또와 함께할 음식, 추천해주세요 →
+        </a>
       </div>
     </section>
   );

@@ -58,7 +58,7 @@ export default function Hero() {
             marginBottom: "0.75rem",
           }}
         >
-          Que es esto? - Tonito
+          Que es Tonito?
         </span>
 
         <h1
@@ -88,7 +88,7 @@ export default function Hero() {
             maxWidth: "400px",
           }}
         >
-          갓 담은 신선함,<br />멕시코 8년의 기억,<br />100% 국산 재료로 만든<br />색 다른 경험.
+          압도적인 아삭함,<br />멕시코 8년의 맛,<br />100% 국산 재료로 만든<br />색 다른 피클.
         </p>
 
         <div className="hero-enter hero-d4" style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>

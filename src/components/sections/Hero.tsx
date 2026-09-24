@@ -37,8 +37,7 @@ export default function Hero() {
           height={480}
           style={{ width: "100%", height: "auto", objectFit: "contain", objectPosition: "center bottom", mixBlendMode: "multiply" }}
           priority
-        loading="lazy"
-                />
+        />
       </div>
 
       {/* Content */}
@@ -74,10 +73,8 @@ export default function Hero() {
             marginBottom: "0.85rem",
           }}
         >
-          <span style={{ color: "var(--primary)" }}>WE</span><br loading="lazy"
-                />
-          PICK<br loading="lazy"
-                />
+          <span style={{ color: "var(--primary)" }}>WE</span><br />
+          PICK<br />
           <span style={{ color: "var(--primary)" }}>DIFFERENT</span>
         </h1>
 
@@ -96,7 +93,7 @@ export default function Hero() {
 
         <div className="hero-enter hero-d4" style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
           <a href="https://store.nicepay-checkout.co.kr/tonito" className="btn btn-white">지금 구매하기</a>
-          <a href="#story"    className="btn btn-ghost">브랜드 스토리 →</a>
+          <a href="#story"    className="btn btn-ghost-dark">브랜드 스토리 →</a>
         </div>
       </div>
 

@@ -166,6 +166,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .btn-outline:hover{ box-shadow: var(--shadow-lg); }
 .btn-ghost  { background: transparent; color: #fff; border-color: rgba(255,255,255,0.45); }
 .btn-ghost:hover  { border-color: #fff; background: rgba(255,255,255,0.08); }
+.btn-ghost-dark  { background: transparent; color: var(--brine-black); border-color: rgba(18,18,18,0.35); }
+.btn-ghost-dark:hover  { border-color: var(--brine-black); background: rgba(18,18,18,0.06); }
 
 /* =========================================
    EYEBROW

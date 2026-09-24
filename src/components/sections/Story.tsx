@@ -2,28 +2,21 @@
 import Image from "next/image";
 import { useReveal } from "@/lib/useReveal";
 
-const STORY_SECTIONS = [
-  {
-    id: "why",
-    title: "이상했어요. 한국의 피클",
-    subtitle: "왜 모두 이렇지?",
-    content: "한국엔 피클이 많긴 한데, 짱아찌, 절임, 피자집 피클 등... 계속 이상했어요. 단순히 맛을 곁들이는 것. 주연이 아닌 조연이라는 생각이 자꾸만 들었어요. 아삭함도, 신선함도, 그 진짜 맛도 제대로 살아있는 경우가 거의 없었으니까요.",
-    accent: "그럼 우리가 주인공으로 만들어 보면 어떨까? 그 생각으로 시작했어요."
-  },
-  {
-    id: "origin",
-    title: "멕시코에서 찾은 답",
-    subtitle: "센트로 아바스토 시장의 그 할머니",
-    content: "저는 멕시코에서 8년을 살았어요. 그 동안 가장 자주 간 곳이 시장이었거든요. 센트로 아바스토(Centro Abasto) — 바쁜 상인들이 몰리는 곳이 아니라, 작은 가게들을 돌아다니며 로컬의 맛을 찾아다니던 거죠. 그러다 한 할머니의 작은 가게를 발견했어요. 뜨겁게 담그지 않은. 차갑게 담근 피클. 한 입 깨물면 '아삭' — 그 소리, 그 향이 정말 살아있었어요.",
-    accent: "그 맛, 절대 잊을 수가 없었습니다."
-  },
-  {
-    id: "what",
-    title: "그 맛을 한국에 가져왔어요",
-    subtitle: "신선함 속에 담은 신선함",
-    content: "토니또는 그냥 '맛있는 피클'이 아니에요. 피클 자체를 다시 정의하는 거죠. 기존의 오래 보관하는 피클이 아니라, 냉장에 담긴 '생 피클'. 고온 살균 같은 건 없이, 그냥 담으면 바로 냉장고로. 마치 멕시코 그 할머니 가게 에서 받아온 그 맛 그대로, 매번 새로운 신선함을 경험하는 거예요.",
-    accent: "냉장고에서 꺼낼 때마다, 그 맛이 그대로 있어요."
-  }
+const PHOTOS = [
+  { src: "/images/story/mx-02-market-stand.jpg", caption: "센트로 아바스토 시장", rotate: -3 },
+  { src: "/images/story/mx-01-taco-table.jpg",    caption: "로컬 식당, 그 첫 끼",   rotate: 2 },
+  { src: "/images/story/mx-05-farm.jpg",          caption: "국산 재료, 발로 뛰며",  rotate: -1.5 },
+  { src: "/images/story/mx-03-salsa-night.jpg",   caption: "멕시코의 살사, 그 아삭함", rotate: 3 },
+  { src: "/images/story/mx-04-street.jpg",        caption: "8년, 멕시코의 거리",    rotate: -2.5 },
+  { src: "/images/story/mx-09-city.jpg",          caption: "멕시코시티에서",        rotate: 1.5 },
+  { src: "/images/story/mx-06-buffet.jpg",        caption: "오이 하나에도 진심",     rotate: -3 },
+  { src: "/images/story/mx-10-horse.jpg",         caption: "현지에서 배운 진짜",     rotate: 2.5 },
+];
+
+const BEATS = [
+  { num: "01", title: "이상했어요, 한국의 피클", line: "짱아찌도 절임도, 주인공은 아니었죠." },
+  { num: "02", title: "멕시코에서 답을 찾았어요", line: "센트로 아바스토 시장, 한 할머니의 손맛." },
+  { num: "03", title: "그 맛 그대로, 한국 재료로", line: "냉장 생피클, 타협은 없습니다." },
 ];
 
 export default function Story() {
@@ -42,21 +35,11 @@ export default function Story() {
         overflow: "hidden",
       }}
     >
-      {/* BG image */}
-      <Image
-        src="/images/Mercado.jpg"
-        alt=""
-        fill
-        style={{ objectFit: "cover", opacity: 0.08, mixBlendMode: "screen" }}
-        aria-hidden="true"
-      loading="lazy"
-                />
-      <div className="stripe-bg" style={{ position: "absolute", inset: 0, pointerEvents: "none" }} loading="lazy"
-                />
+      <div className="stripe-bg" style={{ position: "absolute", inset: 0, pointerEvents: "none" }} />
 
       <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
-        {/* Intro Section */}
-        <div style={{ padding: "6rem 0 4rem" }}>
+        {/* Intro */}
+        <div style={{ padding: "5rem 0 2.5rem" }}>
           <span className="eyebrow" style={{ color: "var(--tertiary-bright)" }}>Our Brand Story</span>
           <h1
             className="reveal"
@@ -66,167 +49,87 @@ export default function Story() {
               textTransform: "uppercase",
               lineHeight: 1.1,
               color: "#fff",
-              marginBottom: "1.5rem",
-              maxWidth: 600,
+              marginBottom: "1rem",
+              maxWidth: 700,
             }}
           >
-            Pick Different
+            8년이 걸렸습니다
           </h1>
           <p
             className="reveal reveal-d1"
             style={{
-              fontSize: 18,
+              fontSize: 17,
               color: "rgba(255,255,255,0.85)",
-              lineHeight: 1.8,
-              maxWidth: 650,
+              lineHeight: 1.7,
+              maxWidth: 560,
               fontWeight: 500,
-              marginBottom: "3rem"
             }}
           >
-            한국의 피클이 너무 아쉬웠어요.
-            <br loading="lazy"
-                />
-            그래서 멕시코에서 배운 맛을 그대로 들고 왔습니다.
-            <br loading="lazy"
-                />
-            <span style={{ color: "var(--tertiary-bright)", fontWeight: 700 }}>이제 피클이 주인공인 이야기를 시작합니다.</span>
+            멕시코의 시장에서 찾은 맛을, 100% 국산 재료로 다시 담았습니다.
           </p>
         </div>
 
-        {/* Mercado Image — R to L Animation */}
+        {/* Photo scrapbook */}
         <div
-          className="reveal story-mercado"
-          style={{
-            padding: "2rem 0 4rem",
-            margin: "2rem 0",
-            borderTop: "2px solid rgba(255,255,255,0.15)",
-            borderBottom: "2px solid rgba(255,255,255,0.15)",
-          }}
+          className="story-photo-grid"
+          style={{ paddingBottom: "3rem" }}
         >
-          <div style={{ position: "relative", height: 300, overflow: "hidden", borderRadius: 4 }}>
-            <Image
-              src="/images/Mercado.jpg"
-              alt="센트로 아바스토 시장"
-              fill
-              style={{
-                objectFit: "cover",
-                animation: "slideInFromRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards"
-              }}
-            loading="lazy"
-                />
-            {/* Overlay */}
+          {PHOTOS.map((p, i) => (
             <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                background: "linear-gradient(135deg, rgba(0,107,50,0.4) 0%, rgba(0,107,50,0.1) 100%)",
-                pointerEvents: "none"
-              }}
-            loading="lazy"
+              key={p.src}
+              className={`reveal reveal-d${(i % 4) + 1} story-polaroid`}
+              style={{ transform: `rotate(${p.rotate}deg)` }}
+            >
+              <div className="story-photo-frame">
+                <Image
+                  src={p.src}
+                  alt={p.caption}
+                  fill
+                  sizes="(min-width: 640px) 25vw, 50vw"
+                  style={{ objectFit: "cover" }}
                 />
-          </div>
+              </div>
+              <p className="story-polaroid-caption">{p.caption}</p>
+            </div>
+          ))}
         </div>
 
-        {/* Story Sections - Scroll Timeline */}
-        {STORY_SECTIONS.map((section, idx) => (
-          <div
-            key={section.id}
-            className="reveal story-section"
-            style={{
-              padding: "3rem 0",
-              borderBottom: idx < STORY_SECTIONS.length - 1 ? "2px solid rgba(255,255,255,0.15)" : "none",
-            }}
-          >
-            {/* Step Number — Mobile: top / Desktop: left */}
-            <div
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "clamp(48px, 15vw, 72px)",
-                fontWeight: 900,
-                color: "rgba(255,255,255,0.08)",
-                lineHeight: 0.9,
-                marginBottom: "1.5rem",
-              }}
-            >
-              {String(idx + 1).padStart(2, '0')}
+        {/* Beats — condensed, no long paragraphs */}
+        <div
+          className="story-beats reveal"
+          style={{
+            borderTop: "2px solid rgba(255,255,255,0.15)",
+            padding: "2.5rem 0",
+          }}
+        >
+          {BEATS.map((b) => (
+            <div key={b.num} className="story-beat">
+              <span className="story-beat-num">{b.num}</span>
+              <h3 className="story-beat-title">{b.title}</h3>
+              <p className="story-beat-line">{b.line}</p>
             </div>
-
-            {/* Content */}
-            <div>
-                <h2
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: 32,
-                    textTransform: "uppercase",
-                    color: "#fff",
-                    marginBottom: "0.5rem",
-                    lineHeight: 1.2
-                  }}
-                >
-                  {section.title}
-                </h2>
-                <p
-                  style={{
-                    fontSize: 14,
-                    color: "var(--tertiary-bright)",
-                    fontWeight: 700,
-                    letterSpacing: "0.05em",
-                    marginBottom: "1.5rem",
-                    textTransform: "uppercase"
-                  }}
-                >
-                  {section.subtitle}
-                </p>
-
-                {section.content && (
-                  <p
-                    style={{
-                      fontSize: 16,
-                      color: "rgba(255,255,255,0.8)",
-                      lineHeight: 1.8,
-                      marginBottom: "1rem"
-                    }}
-                  >
-                    {section.content}
-                  </p>
-                )}
-
-                {section.accent && (
-                  <p
-                    style={{
-                      fontSize: 18,
-                      fontWeight: 700,
-                      color: "var(--tertiary-bright)",
-                      marginTop: "2rem",
-                      fontStyle: "italic"
-                    }}
-                  >
-                    "{section.accent}"
-                  </p>
-                )}
-              </div>
-          </div>
-        ))}
+          ))}
+        </div>
 
         {/* Founder Quote */}
         <div
           style={{
-            padding: "3rem 0 4rem",
+            padding: "2.5rem 0 4rem",
             borderTop: "2px solid rgba(255,255,255,0.15)",
             textAlign: "center"
           }}
         >
           <p
             style={{
-              fontSize: 18,
-              color: "rgba(255,255,255,0.8)",
-              lineHeight: 1.8,
-              maxWidth: 700,
-              margin: "0 auto 1.5rem",
+              fontSize: 17,
+              color: "rgba(255,255,255,0.85)",
+              lineHeight: 1.7,
+              maxWidth: 620,
+              margin: "0 auto 1.25rem",
               fontStyle: "italic"
             }}
           >
-            "토니또는 단순한 피클 브랜드가 아닙니다. 피클이 당당히 주인공으로 올라서는 그런 경험을 만드는 거니까요. 그 할머니 가게처럼요."
+            "토니또는 단순한 피클 브랜드가 아닙니다. 그 할머니 가게처럼, 피클이 주인공이 되는 경험을 만드는 거니까요."
           </p>
           <p style={{ fontSize: 14, color: "var(--tertiary-bright)", fontWeight: 700, textTransform: "uppercase", margin: 0 }}>
             — Antonio Kang
@@ -235,39 +138,71 @@ export default function Story() {
       </div>
 
       <style>{`
-        @keyframes slideInFromRight {
-          from {
-            opacity: 0;
-            transform: translateX(400px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
+        .story-photo-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem 1rem;
+        }
+        .story-polaroid {
+          background: #fff;
+          border: 3px solid var(--brine-black);
+          border-radius: 4px;
+          padding: 8px 8px 28px;
+          box-shadow: 4px 4px 0 var(--brine-black);
+          transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .story-polaroid:hover {
+          box-shadow: 6px 6px 0 var(--brine-black);
+        }
+        .story-photo-frame {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 4 / 3;
+          overflow: hidden;
+          border-radius: 2px;
+          background: var(--bg-low);
+        }
+        .story-polaroid-caption {
+          font-family: var(--font-mono, 'Space Mono', monospace);
+          font-size: 10.5px;
+          letter-spacing: 0.02em;
+          color: var(--brine-black);
+          text-align: center;
+          margin-top: 10px;
+          line-height: 1.3;
         }
 
-        .story-mercado {
-          animation: slideInFromRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+        .story-beats {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        .story-beat-num {
+          display: block;
+          font-family: var(--font-display);
+          font-size: 28px;
+          color: var(--tertiary-bright);
+          margin-bottom: 0.4rem;
+        }
+        .story-beat-title {
+          font-family: var(--font-display);
+          font-size: 22px;
+          text-transform: uppercase;
+          color: #fff;
+          line-height: 1.2;
+          margin-bottom: 0.4rem;
+        }
+        .story-beat-line {
+          font-size: 14px;
+          color: rgba(255,255,255,0.75);
+          line-height: 1.5;
         }
 
+        @media (min-width: 640px) {
+          .story-photo-grid { grid-template-columns: repeat(4, 1fr); gap: 2rem 1.5rem; }
+        }
         @media (min-width: 768px) {
-          .story-mercado {
-            padding: 3rem 0 4rem;
-            margin: 3rem 0 4rem;
-          }
-          .story-mercado > div {
-            height: 400px !important;
-          }
-        }
-
-        @media (max-width: 767px) {
-          .story-mercado {
-            padding: 1.5rem 0 2rem;
-            margin: 1.5rem 0 2rem;
-          }
-          .story-mercado > div {
-            height: 250px !important;
-          }
+          .story-beats { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
         }
       `}</style>
     </section>

@@ -24,8 +24,7 @@ export default function Recipes() {
     >
       {/* Tony decoration */}
       <div style={{ position: "absolute", bottom: "1.5rem", right: "1rem", width: 110, height: 110, zIndex: 1, opacity: 0.9, pointerEvents: "none" }}>
-        <Image src="/images/characters/tony_skateboard.png" alt="" fill style={{ objectFit: "contain" }} loading="lazy"
-                />
+        <Image src="/images/characters/tony_skateboard.png" alt="" fill style={{ objectFit: "contain" }} />
       </div>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <span className="eyebrow" style={{ color: "var(--primary)" }}>Recipes</span>
@@ -90,7 +89,6 @@ export default function Recipes() {
                   alt={r.title}
                   fill
                   style={{ objectFit: "cover" }}
-                loading="lazy"
                 />
               </div>
               <div style={{ padding: "1rem" }}>

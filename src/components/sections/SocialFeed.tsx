@@ -1,22 +1,51 @@
-"use client";
 import Image from "next/image";
-import { useReveal } from "@/lib/useReveal";
 
-const CELLS = [
-  { src: "/images/character-classic.jpg", alt: "Instagram post 1" },
-  { src: "/images/emblem.jpg",            alt: "Instagram post 2" },
-  { src: "/images/pattern.jpg",           alt: "Instagram post 3" },
-  { src: "/images/brand-bg.jpg",          alt: "Instagram post 4" },
-  { src: "/images/character-detail.jpg",  alt: "Instagram post 5" },
-  { src: "/images/badges-detail.jpg",     alt: "Instagram post 6" },
+const FALLBACK_CELLS = [
+  { src: "/images/character-classic.jpg", alt: "Instagram post 1", href: "https://www.instagram.com/tonito_quikle" },
+  { src: "/images/emblem.jpg",            alt: "Instagram post 2", href: "https://www.instagram.com/tonito_quikle" },
+  { src: "/images/pattern.jpg",           alt: "Instagram post 3", href: "https://www.instagram.com/tonito_quikle" },
+  { src: "/images/brand-bg.jpg",          alt: "Instagram post 4", href: "https://www.instagram.com/tonito_quikle" },
+  { src: "/images/character-detail.jpg",  alt: "Instagram post 5", href: "https://www.instagram.com/tonito_quikle" },
+  { src: "/images/badges-detail.jpg",     alt: "Instagram post 6", href: "https://www.instagram.com/tonito_quikle" },
 ];
 
-export default function SocialFeed() {
-  const ref = useReveal() as React.RefObject<HTMLDivElement>;
+type InstagramMedia = {
+  id: string;
+  caption?: string;
+  media_type: "IMAGE" | "VIDEO" | "CAROUSEL_ALBUM";
+  media_url: string;
+  thumbnail_url?: string;
+  permalink: string;
+};
+
+async function getInstagramFeed() {
+  const token = process.env.INSTAGRAM_ACCESS_TOKEN;
+  if (!token) return null;
+
+  try {
+    const res = await fetch(
+      `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&limit=6&access_token=${token}`,
+      { next: { revalidate: 3600 } } // re-fetch at most once an hour
+    );
+    if (!res.ok) return null;
+
+    const data: { data: InstagramMedia[] } = await res.json();
+    return data.data.slice(0, 6).map((post) => ({
+      src: post.media_type === "VIDEO" ? post.thumbnail_url! : post.media_url,
+      alt: post.caption?.slice(0, 80) || "Tonito Instagram post",
+      href: post.permalink,
+    }));
+  } catch {
+    return null;
+  }
+}
+
+export default async function SocialFeed() {
+  const liveFeed = await getInstagramFeed();
+  const cells = liveFeed && liveFeed.length > 0 ? liveFeed : FALLBACK_CELLS;
 
   return (
     <section
-      ref={ref}
       id="social"
       style={{
         background: "var(--brine-black)",
@@ -36,7 +65,6 @@ export default function SocialFeed() {
           href="https://www.instagram.com/tonito_quikle"
           target="_blank"
           rel="noopener noreferrer"
-          className="reveal"
           style={{
             fontFamily: "var(--font-display)",
             fontSize: "clamp(37px, 10vw, 70px)",
@@ -47,17 +75,14 @@ export default function SocialFeed() {
             marginBottom: "1.5rem",
             display: "inline-block",
             textDecoration: "none",
-            transition: "opacity 0.2s",
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
-          onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
         >
           @Tonito_quikle
         </a>
 
         {/* Grid */}
         <div
-          className="reveal reveal-d1"
+          className="social-feed-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
@@ -68,33 +93,29 @@ export default function SocialFeed() {
             marginBottom: "1.5rem",
           }}
         >
-          {CELLS.map((c, i) => (
-            <div
+          {cells.map((c, i) => (
+            <a
               key={i}
+              href={c.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-feed-cell"
               style={{
+                display: "block",
                 aspectRatio: "1",
                 background: "#1e1e1e",
                 position: "relative",
                 overflow: "hidden",
-                cursor: "pointer",
               }}
             >
               <Image
                 src={c.src}
                 alt={c.alt}
                 fill
-                style={{ objectFit: "cover", opacity: 0.85, transition: "opacity 0.2s, transform 0.2s" }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.opacity = "1";
-                  e.currentTarget.style.transform = "scale(1.05)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.opacity = "0.85";
-                  e.currentTarget.style.transform = "scale(1)";
-                }}
-                loading="lazy"
+                sizes="(min-width: 768px) 400px, 33vw"
+                style={{ objectFit: "cover" }}
               />
-            </div>
+            </a>
           ))}
         </div>
 
@@ -129,6 +150,17 @@ export default function SocialFeed() {
           </a>
         </div>
       </div>
+
+      <style>{`
+        .social-feed-cell img {
+          opacity: 0.85;
+          transition: opacity 0.2s, transform 0.2s;
+        }
+        .social-feed-cell:hover img {
+          opacity: 1;
+          transform: scale(1.05);
+        }
+      `}</style>
     </section>
   );
 }

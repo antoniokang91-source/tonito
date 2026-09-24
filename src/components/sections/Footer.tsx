@@ -177,7 +177,7 @@ export default function Footer() {
               fontFamily: "var(--font-display)",
               fontSize: 14,
               textTransform: "uppercase",
-              color: "var(--primary-light, #008741)",
+              color: "var(--primary-light, #7caa65)",
               letterSpacing: "0.05em",
             }}
           >

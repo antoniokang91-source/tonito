@@ -7,21 +7,22 @@
    DESIGN TOKENS
 ========================================= */
 :root {
-  --primary:         #006b32;
-  --primary-dark:    #004d22;
-  --primary-light:   #008741;
-  --secondary:       #b61821;
-  --secondary-dark:  #8a0f17;
-  --tertiary:        #8a7a00;
-  --tertiary-bright: #d4be00;
+  /* Tonito official brand palette (from character color sheet) */
+  --primary:         #80872d; /* Tonito Body */
+  --primary-dark:    #3b3e1d; /* Tonito Body (shadow) */
+  --primary-light:   #7caa65; /* Tonito Poncho (green) */
+  --secondary:       #cd5b37; /* Tonito Poncho (red-orange) */
+  --secondary-dark:  #a4492c; /* darkened Poncho red-orange */
+  --tertiary:        #b78554; /* darkened Poncho tan */
+  --tertiary-bright: #dea669; /* Tonito Poncho (tan) */
   --bg:              #fcf9f4;
   --bg-low:          #f0ede9;
-  --brine-black:     #121212;
+  --brine-black:     #000000; /* Tonito Black */
 
-  --shadow-sm:  3px 3px 0px #121212;
-  --shadow-md:  4px 4px 0px #121212;
-  --shadow-lg:  6px 6px 0px #121212;
-  --shadow-xl:  8px 8px 0px #121212;
+  --shadow-sm:  3px 3px 0px #000000;
+  --shadow-md:  4px 4px 0px #000000;
+  --shadow-lg:  6px 6px 0px #000000;
+  --shadow-xl:  8px 8px 0px #000000;
   --shadow-white-md: 4px 4px 0px rgba(255,255,255,0.4);
   --shadow-white-lg: 6px 6px 0px rgba(255,255,255,0.5);
 }

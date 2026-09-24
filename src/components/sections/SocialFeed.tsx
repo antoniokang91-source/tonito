@@ -69,7 +69,7 @@ export default async function SocialFeed() {
             fontFamily: "var(--font-display)",
             fontSize: "clamp(37px, 10vw, 70px)",
             textTransform: "uppercase",
-            color: "var(--primary-light, #008741)",
+            color: "var(--primary-light, #7caa65)",
             letterSpacing: "-0.01em",
             lineHeight: 1,
             marginBottom: "1.5rem",

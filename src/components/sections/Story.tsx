@@ -3,14 +3,18 @@ import Image from "next/image";
 import { useReveal } from "@/lib/useReveal";
 
 const PHOTOS = [
-  { src: "/images/story/mx-02-market-stand.jpg", caption: "센트로 아바스토 시장", rotate: -3 },
+  { src: "/images/story/mx-02-market-stand.jpg", caption: "센트로 아바스토 시장",   rotate: -3 },
+  { src: "/images/story/mx-11-jar.jpg",           caption: "병 하나에도 진심",      rotate: 2.5 },
+  { src: "/images/story/mx-12-feast.jpg",         caption: "현지 로컬 밥상",        rotate: -2 },
+  { src: "/images/story/mx-13-tile.jpg",          caption: "멕시코의 색",           rotate: 3 },
+  { src: "/images/story/mx-14-shrimp.jpg",        caption: "해변의 새우구이",       rotate: -1.5 },
   { src: "/images/story/mx-01-taco-table.jpg",    caption: "로컬 식당, 그 첫 끼",   rotate: 2 },
-  { src: "/images/story/mx-05-farm.jpg",          caption: "국산 재료, 발로 뛰며",  rotate: -1.5 },
+  { src: "/images/story/mx-15-hotdog.jpg",        caption: "길거리 화로 앞에서",     rotate: -3 },
+  { src: "/images/story/mx-05-farm.jpg",          caption: "국산 재료, 발로 뛰며",  rotate: 1.5 },
+  { src: "/images/story/mx-16-angel.jpg",         caption: "멕시코시티에서",        rotate: -2.5 },
   { src: "/images/story/mx-03-salsa-night.jpg",   caption: "멕시코의 살사, 그 아삭함", rotate: 3 },
-  { src: "/images/story/mx-04-street.jpg",        caption: "8년, 멕시코의 거리",    rotate: -2.5 },
-  { src: "/images/story/mx-09-city.jpg",          caption: "멕시코시티에서",        rotate: 1.5 },
-  { src: "/images/story/mx-06-buffet.jpg",        caption: "오이 하나에도 진심",     rotate: -3 },
-  { src: "/images/story/mx-10-horse.jpg",         caption: "현지에서 배운 진짜",     rotate: 2.5 },
+  { src: "/images/story/mx-06-buffet.jpg",        caption: "오이 하나에도 진심",     rotate: -1.5 },
+  { src: "/images/story/mx-10-horse.jpg",         caption: "현지에서 배운 진짜",     rotate: 2 },
 ];
 
 const BEATS = [

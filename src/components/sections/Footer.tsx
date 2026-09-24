@@ -62,6 +62,19 @@ export default function Footer() {
             >
               We Pick Different.
             </p>
+            <p
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 11,
+                lineHeight: 1.7,
+                color: "rgba(255,255,255,0.3)",
+                marginTop: "1.25rem",
+              }}
+            >
+              에이케이트레이드컴페니코리아(AK TRADE COMPANY KOREA)<br />
+              사업자등록번호 859-02-01986<br />
+              대구광역시 남구 현충로 7길 29-14 B-401
+            </p>
           </div>
 
           {/* Links */}

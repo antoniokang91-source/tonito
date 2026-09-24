@@ -168,7 +168,7 @@ export default function Footer() {
               letterSpacing: "0.05em",
             }}
           >
-            PICK DIFFERENT
+            WE PICK DIFFERENT
           </span>
         </div>
       </div>

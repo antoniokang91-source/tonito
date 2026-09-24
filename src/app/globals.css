@@ -8,7 +8,7 @@
 ========================================= */
 :root {
   /* Tonito official brand palette (from character color sheet) */
-  --primary:         #80872d; /* Tonito Body */
+  --primary:         #6F7C28; /* Tonito Body (vivid) */
   --primary-dark:    #3b3e1d; /* Tonito Body (shadow) */
   --primary-light:   #7caa65; /* Tonito Poncho (green) */
   --secondary:       #cd5b37; /* Tonito Poncho (red-orange) */

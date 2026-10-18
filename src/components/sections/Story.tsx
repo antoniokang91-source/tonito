@@ -9,7 +9,7 @@ const PHOTOS = [
   { src: "/images/story/mx-13-tile.jpg",          caption: "멕시코의 색" },
   { src: "/images/story/mx-14-shrimp.jpg",        caption: "해변의 새우구이" },
   { src: "/images/story/mx-01-taco-table.jpg",    caption: "로컬 식당, 그 첫 끼" },
-  { src: "/images/story/mx-15-hotdog.jpg",        caption: "길거리 화로 앞에서" },
+  { src: "/images/recipes/pickle_dog.jpg",        caption: "길거리 화로 앞에서" },
   { src: "/images/story/mx-05-farm.jpg",          caption: "국산 재료, 발로 뛰며" },
   { src: "/images/story/mx-16-angel.jpg",         caption: "멕시코시티에서" },
   { src: "/images/story/mx-03-salsa-night.jpg",   caption: "멕시코의 살사, 그 아삭함" },

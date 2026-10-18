@@ -3,8 +3,8 @@ import Image from "next/image";
 import { useReveal } from "@/lib/useReveal";
 
 const RECIPES = [
-  { img: "/images/story/mx-15-hotdog.jpg",  tag: "EASY · 5MIN",  title: "피클도그",   product: "빵 + 토니또 피클 + 소시지 토핑" },
-  { img: "/images/recipes/nacho-salsa.jpg", tag: "EASY · 10MIN", title: "피클나쵸",   product: "피클딥 + 나쵸" },
+  { img: "/images/recipes/pickle_dog.jpg",  tag: "EASY · 5MIN",  title: "피클도그",   product: "빵 + 토니또 피클 + 소시지 토핑" },
+  { img: "/images/recipes/pickle_nacho.png", tag: "EASY · 10MIN", title: "피클나쵸",   product: "피클딥 + 나쵸" },
 ];
 
 export default function Recipes() {
